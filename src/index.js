@@ -5,7 +5,7 @@ import './index.css';
 function Form(){
   const [userData,setUserData] = useState({
     fName : '',
-    lName :'',
+    lName : '',
     email : '',
     phone : ''
   })
@@ -18,38 +18,44 @@ function Form(){
     const {value,name} = event.target;
 
     setUserData((preVal)=>{
-      if (name === 'fName') {
-        return{
-          fName : value,
-          lName : preVal.lName,
-          email : preVal.email,
-          phone : preVal.phone
+
+      return{
+        ...preVal,
+        [name]: value
       }
-      }
-      else if (name === 'lName') {
-        return{
-          fName : preVal.fName,
-          lName : value,
-          email : preVal.email,
-          phone : preVal.phone
-      }
-      }
-      else if (name === 'email') {
-        return{
-          fName : preVal.fName,
-          lName : preVal.lName,
-          email : value,
-          phone : preVal.phone
-      }
-      }
-      else if (name === 'phone') {
-        return{
-          fName : preVal.fName,
-          lName : preVal.lName,
-          email : preVal.email,
-          phone : value
-      }
-      }
+
+      // if (name === 'fName') {
+      //   return{
+      //     fName : value,
+      //     lName : preVal.lName,
+      //     email : preVal.email,
+      //     phone : preVal.phone
+      // }
+      // }
+      // else if (name === 'lName') {
+      //   return{
+      //     fName : preVal.fName,
+      //     lName : value,
+      //     email : preVal.email,
+      //     phone : preVal.phone
+      // }
+      // }
+      // else if (name === 'email') {
+      //   return{
+      //     fName : preVal.fName,
+      //     lName : preVal.lName,
+      //     email : value,
+      //     phone : preVal.phone
+      // }
+      // }
+      // else if (name === 'phone') {
+      //   return{
+      //     fName : preVal.fName,
+      //     lName : preVal.lName,
+      //     email : preVal.email,
+      //     phone : value
+      // }
+      // }
     });
   };
 
